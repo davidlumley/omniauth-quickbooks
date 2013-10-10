@@ -1,11 +1,13 @@
-# Omniauth::Quickbooks
+# Omniauth Quickbooks
 
-TODO: Write a gem description
+[Omniauth Quickbooks](https://github.com/davidlumley/omniauth-quickbooks) is an [OmniAuth](https://github.com/intridea/omniauth) authentication strategy for [Quickbooks](http://quickbooks.intuit.com/).
+
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
+    gem 'omniauth', '~> 1.0.0'
     gem 'omniauth-quickbooks'
 
 And then execute:
@@ -18,7 +20,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Register on Intuit's [developer site](https://developer.intuit.com) and create an application.
+
+For a Rack application:
+
+    use OmniAuth::Builder do
+      provider :quickbooks, CONSUMER_KEY, CONSUMER_SECRET
+    end
+
+For a Rails application:
+
+    # config/intializers/omniauth.rb
+    Rails.application.config.middleware.use OmniAuth::Builder do
+      provider :quickbooks, CONSUMER_KEY, CONSUMER_SECRET
+    end
 
 ## Contributing
 
